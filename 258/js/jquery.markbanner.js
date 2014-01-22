@@ -6,10 +6,8 @@
             currentSlide: 0,
 			oldSlide: 0,
             totalSlides: 0,
-			Slideheight: 0,
-			Slidewidth: 1065,
-		    randAnim: 1000,
-			titleAnim: '',
+		    randAnim: 500,
+			settingAnim: 500,
             running: false,
             paused: false,
             stop: false
@@ -23,9 +21,10 @@
 		});    
 		
 		//초기셋팅 
+	  vars.settingAnim = settings.animSpeed;
 	  vars.oldSlide = vars.currentSlide;	
-	  $(".mainbanner a").css({'z-index':'1'}).show();
-      $(".mainbanner a").eq(vars.currentSlide).css({'z-index' : 20, left : 0 +'px'});
+	  $(".mainbanner a").css({'z-index':'21'}).show();
+      $(".mainbanner a").eq(vars.currentSlide).css({'z-index' : 40, left : 0 +'px'}).find('.txtbox').css({top: settings.boll + 'px'});
       $(".tmpbox a").eq(vars.currentSlide).addClass("active");
 	
    
@@ -54,8 +53,8 @@
 			}
   
 		//큰베너이동
-		$(".mainbanner a").eq(vars.oldSlide).animate({left : - $(".mainbanner a").width() +'px'}, slider.animSpeed,'',function(){ $(this).css({'z-index' : 1, 'left' : $(".mainbanner a").width() + 'px'}); });
-		$(".mainbanner a").eq(vars.currentSlide).animate({left : 0+'px'}, slider.animSpeed,'',function(){ $(this).css({'z-index' : 20}); });
+		$(".mainbanner a").eq(vars.oldSlide).animate({left : - $(".mainbanner a").width() +'px'}, slider.animSpeed,'',function(){ $(this).css({'z-index' : 21, 'left' : $(".mainbanner a").width() + 'px'});$(this).find('.txtbox').css({top : -190 + 'px'}); });
+		$(".mainbanner a").eq(vars.currentSlide).animate({left : 0+'px'}, slider.animSpeed,'',function(){ $(this).css({'z-index' : 40}).find('.txtbox').animate({top: settings.boll + 'px'}, {duration : settings.duration, easing: settings.easing}); });
         $(".tmpbox a").eq(vars.oldSlide).removeClass("active");
         $(".tmpbox a").eq(vars.currentSlide).addClass("active");    
        
@@ -87,6 +86,12 @@
 
     $(".lab", slider).hover(function(){	$(this).css({'opacity':'0.7'});	},function(){ $(this).css({'opacity':'1'}) });
     $(".rab", slider).hover(function(){	$(this).css({'opacity':'0.7'});	},function(){ $(this).css({'opacity':'1'}) });
+    $(".tmpbox a", slider).hover(function(){
+    	vars.currentSlide = $(this).attr("rel") -1;
+    	imgeffectRun(slider, settings, false); 
+    },function(){
+    	
+    });
     
 	$(".tmpbox a", slider).hover(function(){	$(this).find('.num').animate({'opacity':'0.7'}, 300).animate({'opacity':'1'}, 300);	});
    settings.afterLoad.call(this);
@@ -110,8 +115,9 @@
 	$.fn.markbannereffect.defaults = {
 		animSpeed: 1000, //이벤트 속도
 		pauseTime: 4000, //대기시간
-	    wcut: 10, //분할수
-		hcut: 10, //분할수
+		boll : 380, //볼이 정지할 위치
+		duration : 1000, //떨어지는 효과 시간
+		easing : "easeOutBounce",//떨어지는 효과
 		pauseOnHover: true,
 		beforeChange: function(){},
 		afterChange: function(){},
