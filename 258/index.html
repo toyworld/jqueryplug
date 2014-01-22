@@ -1,0 +1,114 @@
+<!DOCTYPE >
+<html>
+ <head>
+  <title> 슬라이드 베너 (코코맘) </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+<script type="text/javascript" src="./js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="./js/jquery.markbanner.js"></script>
+  <style type="text/css">
+  body {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px;font-size:11px; color:#dddddd}
+  /*
+	 #wap2013092614 {float:left;position: relative;width:983px;height:355px;overflow:hidden;}
+	 #wap2013092614 .partbody { float:left;position: absolute;width:765px;height:355px;left:0px;top:0px;z-index:30;overflow:hidden;}
+	 #wap2013092614 .partbody .part { float:left;position: absolute;width:765px;height:355px;left:0px;top:0px;z-index:1;opacity:0;}
+
+	 #wap2013092614 .parttitlebody { float:left;position: absolute;width:983px;height:355px;left:0px;top:0px;z-index:10;}
+     #wap2013092614 .parttitlebody ul { float:left;position: relative;width:983px;height:auto;left:0px;top:0px;margin-left:0px;margin-top:0px;padding-left:0px;list-style-type:none; }
+	 #wap2013092614 .parttitlebody li { float:left;position: relative;width:983px;height:55px;left:0px;top:0px;margin-left:0px;margin-top:0px;margin-bottom:5px;padding-left:0px;list-style-type:none;overflow:hidden; }
+     #wap2013092614 .parttitlebody li.select {background-image:url(./img/bg_home_sprite130828.png);background-position:778px 20px;}
+	 #wap2013092614 .parttitlebody li .titlepart { float:right;position: relative;width:205px;height:55px;overflow:hidden;cursor:pointer;}
+	 #wap2013092614 .parttitlebody li .titlepart a{ float:right;position: relative;width:205px;height:55px;overflow:hidden;cursor:pointer;}
+	*/
+    #markbody { float:left;position: relative;width:1165px;height:655px;overflow:hidden;background-image:url(./img/paperbg.png);}
+    #markbody .markTitle { float:left;position: relative;width:100%;height:auto;text-align:center}
+	#markbody .lab { float:left;position: relative;width:35px;height:69px;text-align:center;background-image:url(./img/lab.png);background-repeat:no-repeat;margin-top:196px;cursor:pointer;}
+	#markbody .rab { float:right;position: relative;width:35px;height:69px;text-align:center;background-image:url(./img/rab.png);background-repeat:no-repeat;margin-top:196px;cursor:pointer;}
+	#markbody .bannerbody { float:left;position: relative;width:1065px;height:auto;text-align:center;overflow:hidden;margin-top:10px;margin-left:15px;padding-left:0px;}
+	#markbody .bannerbody .mainbanner { float:left;position: relative;width:1065px;height:400px;text-align:center;left:0px;padding-left:0px;margin-left:0px;}
+	#markbody .bannerbody .mainbanner a{ float:left;position: absolute;width:1065px;height:400px;list-style-type:none;padding-left:0px;margin-left:0px;left:1065px; }
+	#markbody .bannerbody .tmpbanner { float:left;position: relative;width:1066px;height:123px;text-align:center;overflow:hidden;margin-top:30px;background-image:url(./img/babyTabsBg.png);background-repeat:no-repeat;}
+	#markbody .bannerbody .tmpbanner .tmpbox { float:left;position: relative;width:1065px;height:96px; margin-left:10px;margin-top:12px; }
+	#markbody .bannerbody .tmpbanner a { float:left;position: relative;width:136px;height:90px;margin-right:8px;padding-left:0px;border:3px solid #FFFFFF;overflow:hidden;color:#dddddd}
+	#markbody .bannerbody .tmpbanner a:hover { border:3px #000000 solid;overflow:hidden; }
+	#markbody .bannerbody .tmpbanner a.active { border:3px #000000 solid; }
+	#markbody .bannerbody .tmpbanner img { float:left;position:relative;width:136px;height:90px;z-index:1px;padding-left:0px;margin-left:0px;}
+    #markbody .bannerbody .tmpbanner a .num {  float:left;position:absolute;width:19px;height:19px;z-index:10px;left: 115px; top: 67px;padding-left:0px;margin-left:0px;background-image:url(./img/smallcircle2.png);background-repeat:no-repeat;font-weight: bold; font-family: tahoma; font-size: 10.5px; padding-top: 1px; opacity: 1; background-position: initial initial; background-repeat: initial initial;}
+  </style>
+ </head>
+
+ <body>
+
+    <div id="markbody">
+		  <!--  타이틀 -->
+		  <div class="markTitle">
+		     <img src="./img/summer.png" width="1065" height="62" border="0" alt="">
+		  </div>
+		  <!--  타이틀 -->
+		  <div class="lab"> </div>
+		  <div class="bannerbody">
+			   <div class="mainbanner">
+			       <!--  큰베너 -->
+				   
+				    <!--  반복 -->
+					<a href="http://www.naver.com" rel=0><img src="./img/s01.jpg" border="0" alt=""></a>
+					<!--  반복 -->
+					<a href="http://www.naver.com" rel=1><img src="./img/s02.jpg" border="0" alt=""></a>
+					<a href="http://www.naver.com" rel=2><img src="./img/s03.jpg" border="0" alt=""></a>
+					<a href="http://www.naver.com" rel=3><img src="./img/s04.jpg" border="0" alt=""></a>
+					<a href="http://www.naver.com" rel=4><img src="./img/s05.jpg" border="0" alt=""></a>
+					<a href="http://www.naver.com" rel=5><img src="./img/s06.jpg" border="0" alt=""></a>
+					<a href="http://www.naver.com" rel=6><img src="./img/s07.jpg" border="0" alt=""></a>
+				   
+				    <!--  큰베너 -->
+			   </div>
+			   <div class="tmpbanner">
+				    <div  class="tmpbox">
+						<!--  반복 -->
+						<a href="http://www.naver.com" rel="0">
+							<img src="./img/s01.jpg" border="0" alt="">
+							<div class="num">1</div>
+						</a>
+						<!--  반복 -->
+						<a href="http://www.naver.com" rel="1">
+							<img src="./img/s02.jpg" border="0" alt="">
+							<div class="num">2</div>
+						</a>
+						<a href="http://www.naver.com" rel="2">
+							<img src="./img/s03.jpg" border="0" alt="">
+							<div class="num">3</div>
+						</a>
+						<a href="http://www.naver.com" rel="3">
+							<img src="./img/s04.jpg" border="0" alt="">
+							<div class="num">4</div>
+						</a>
+						<a href="http://www.naver.com" rel="4">
+							<img src="./img/s05.jpg" border="0" alt="">
+							<div class="num">5</div>
+						</a>
+						<a href="http://www.naver.com" rel="5">
+							<img src="./img/s06.jpg" border="0" alt="">
+							<div class="num">6</div>
+						</a>
+						<a href="http://www.naver.com" rel="6">
+							<img src="./img/s07.jpg" border="0" alt="">
+							<div class="num">7</div>
+						</a>
+					</div>
+			   </div>
+		  </div>		
+		  <div class="rab"> </div>
+	</div>
+ 
+<script type="text/javascript">
+
+  var options = {};
+	options["animSpeed"] = 1000;   //애니시간
+	options["pauseTime"] = 3000;   //대기시간	
+	$("#markbody").markbannereffect(options);
+
+</script>
+ </body>
+</html>
