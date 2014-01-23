@@ -6,7 +6,7 @@
             currentSlide: 0,
 			oldSlide: 0,
             totalSlides: 0,
-		    randAnim: 500,
+		    randAnim: 100,
 			settingAnim: 500,
             running: false,
             paused: false,
@@ -53,8 +53,8 @@
 			}
   
 		//큰베너이동
-		$(".mainbanner a").eq(vars.oldSlide).animate({left : - $(".mainbanner a").width() +'px'}, slider.animSpeed,'',function(){ $(this).css({'z-index' : 21, 'left' : $(".mainbanner a").width() + 'px'});$(this).find('.txtbox').css({top : -190 + 'px'}); });
-		$(".mainbanner a").eq(vars.currentSlide).animate({left : 0+'px'}, slider.animSpeed,'',function(){ $(this).css({'z-index' : 40}).find('.txtbox').animate({top: settings.boll + 'px'}, {duration : settings.duration, easing: settings.easing}); });
+		$(".mainbanner a").eq(vars.oldSlide).css({'z-index' : 21}).animate({left : - $(".mainbanner a").width() +'px'}, slider.animSpeed,'',function(){ $(this).css({ 'left' : $(".mainbanner a").width() + 'px'});$('.txtbox', slider).css({top : -190 + 'px'}); });
+		$(".mainbanner a").eq(vars.currentSlide).css({'z-index' : 40}).animate({left : 0+'px'}, slider.animSpeed,'',function(){ $(this).find('.txtbox').animate({top: settings.boll + 'px'}, {duration : settings.duration, easing: settings.easing}); });
         $(".tmpbox a").eq(vars.oldSlide).removeClass("active");
         $(".tmpbox a").eq(vars.currentSlide).addClass("active");    
        
@@ -86,11 +86,22 @@
 
     $(".lab", slider).hover(function(){	$(this).css({'opacity':'0.7'});	},function(){ $(this).css({'opacity':'1'}) });
     $(".rab", slider).hover(function(){	$(this).css({'opacity':'0.7'});	},function(){ $(this).css({'opacity':'1'}) });
-    $(".tmpbox a", slider).hover(function(){
-    	vars.currentSlide = $(this).attr("rel") -1;
-    	imgeffectRun(slider, settings, false); 
+    $(".rab", slider).click(function(){
+		
+		imgeffectRun(slider, settings, false); 
+	});
+	$(".lab", slider).click(function(){
+		vars.currentSlide = vars.currentSlide -2;
+		imgeffectRun(slider, settings, false); 
+	});
+	$(".tmpbox a", slider).hover(function(){
+    	settings.animSpeed = vars.randAnim;
+		if(vars.currentSlide !=$(this).attr("rel")){
+			vars.currentSlide = $(this).attr("rel") -1;
+			imgeffectRun(slider, settings, false); 
+		}
     },function(){
-    	
+    	settings.animSpeed = vars.settingAnim;
     });
     
 	$(".tmpbox a", slider).hover(function(){	$(this).find('.num').animate({'opacity':'0.7'}, 300).animate({'opacity':'1'}, 300);	});
